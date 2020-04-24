@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: PhotoAPIConfigServer
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/JinheFan/PhotoAppConfiguration
+          username: JinheFan
+          password: Fanjinhe123!
+          clone-on-start: true
+        native:
+          search-locations:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+server:
+  port: 8012
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

@@ -1,0 +1,32 @@
+server:
+  port: 8011
+spring:
+  application:
+    name: zuul
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka
+api:
+  login:
+    url:
+      path: /users-ws/login
+  registration:
+    url:
+      path: /users-ws/users
+  h2console:
+    url:
+      path: /users-ws/h2-console/**
+authorization:
+  token:
+    header:
+      name: Authorization
+      prefix: Bearer
+token:
+  secret: abc123
+
